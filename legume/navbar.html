@@ -1,0 +1,173 @@
+<div class="header">
+    <div class="navigation_bar1">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="nav1" href="{{ path("espace_client") }}"><img src=" {{ asset ('images/compte.png') }}" class="compte">
+                        Compte<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" id="nav1" href="{{ path("commander") }}"><img src=" {{ asset ('images/panier.png') }}" class="panier">
+                        Panier <span class="sr-only"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <a href="{{ path("accueil")}}"><img src=" {{ asset ('images/logo.png') }}" class="logo">
+
+    </a>
+</div>
+
+<div class="navigation_bar2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" id= "accueil" href="#"><img src=" {{ asset ('images/accueil.png') }}" class="accueil">
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id= "nav2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src=" {{ asset ('images/fruits-legumes.png') }}" class="fruits"> Fruits et Légumes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" id= "nav2" href="#">Découverte</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id= "nav2" href="#">Nos différents produits</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id= "nav2" href="#">Proche de chez moi</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id= "nav2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src=" {{ asset ('images/bio.png') }}" class="bio"> Bio et Ecologie
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" id= "nav2" href="#">Nos engagements</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id= "nav2" href="#">Nos partenaires</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id= "nav2" href="#">Proche de chez moi</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Recherche des produits..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search" href="{{ path("consultation_produit") }}"><img src=" {{ asset ('images/search.png') }}" class="search">    </button>
+            </form>
+        </div>
+    </nav>
+</div>
+
+<style>
+    html
+    {
+        background-color: antiquewhite;
+    }
+    .header
+    {
+        background-color: #333;
+    }
+    .logo
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 125px;
+        height: 100px;
+    }
+    .navigation_bar2
+    {
+        margin-bottom: -45px;
+    }
+    .navigation_bar1
+    {
+        float: right;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: -250px;
+    }
+    #nav2
+    {
+        color: white;
+        text-align: center;
+    }
+    #nav1
+    {
+        color: white;
+    }
+    #accueil
+    {
+        color: white;
+    }
+    .compte
+    {
+        width: 30px;
+        height: 30px;
+    }
+    .panier
+    {
+        width: 30px;
+        height: 30px;
+    }
+    .dropdown-menu
+    {
+        background-color: #333;
+    }
+    .dropdown-menu a:hover
+    {
+        background-color: black;
+    }
+    .navigation_bar1 a:hover
+    {
+        background-color: black;
+    }
+    .navigation_bar2 a:hover
+    {
+        background-color: dodgerblue;
+    }
+    .fruits
+    {
+        margin-bottom: auto;
+        margin-top: auto;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+    .search
+    {
+        width: 30px;
+        height: 25px;
+    }
+    .accueil
+    {
+        width: 30px;
+        height: 30px;
+    }
+    #accueil
+    {
+        padding-top: 20px;
+        padding-bottom: 16px;
+    }
+    .bio
+    {
+        margin-top: -5px;
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+    }
+    #form
+    {
+        padding: 20px;
+    }
+    #search
+    {
+        margin-top: 10px;
+    }
+</style>

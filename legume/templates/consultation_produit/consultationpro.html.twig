@@ -1,0 +1,262 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultation des produits{% endblock %}
+
+{% block body %}
+    <div class="header">
+        <div class="navigation_bar1">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" id="nav1" href="{{ path("espace_client") }}"><img src="{{ asset('images/compte.png') }}" class="compte">
+                                Compte<span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" id="nav1" href="{{ path("commander") }}"><img src="{{ asset('images/panier.png') }}" class="panier">
+                                Panier <span class="sr-only"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <a href="{{ path("accueil")}}"><img src="{{ asset('images/logo.png') }}" class="logo">
+
+        </a>
+    </div>
+
+    <div class="navigation_bar2">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id= "accueil" href="{{ path("accueil")}}"><img src="{{ asset('images/accueil.png') }}" class="accueil">
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id= "nav2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="{{ asset('images/fruits-legumes.png') }}" class="fruits"> Fruits et Légumes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" id= "nav2" href="{{ path("consultation_produit")}}">Nos produits</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" id= "nav2" href="{{ path("liste_magasins")}}">Proche de chez moi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id= "nav2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="{{ asset('images/bio.png') }}" class="bio"> Bio et Ecologie
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" id= "nav2" href="{{ path("liste_partenaires")}}">Nos partenaires</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" id= "nav2" href="{{ path("engagements")}}">Nos engagements</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Recherche des produits..." aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search" href="{{ path("consultation_produit") }}"><img src="{{ asset('images/search.png') }}" class="search">    </button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="produit">
+        <div class="imagepro">
+            <img src="{{ asset('images/imageproduit.png') }}" alt="Image du produit" class="consultation_produit">
+        </div>
+        <div class="desc">
+            <div class="texte">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam iaculis, quam in venenatis semper, nisi sapien iaculis sem, quis tempus diam risus nec erat. Nulla facilisi. Suspendisse potenti. Sed hendrerit efficitur felis. Donec placerat bibendum sapien porta congue. Ut at finibus dui, ac aliquam ex. Nam lorem orci, molestie eu risus non, eleifend sollicitudin lorem. Donec interdum tempus arcu, at malesuada sapien convallis id. Aliquam nec ullamcorper massa. Praesent id leo porttitor, dignissim est tempus, pharetra libero. Quisque elementum condimentum hendrerit. Praesent sem enim, vehicula et tempor sit amet, scelerisque et felis. </p>
+                <p class="prix">1.50€ pièce</p>
+            </div>
+            <div class="ajoutpanier">
+                <form action="">
+                    <input type="number" placeholder="Quantité" required min="0" max="9999"><br>
+                    <input type="submit" value="Ajouter au panier">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class = "footer">
+        {% block footer %}
+            <h5 class="text-uppercase">@2020 Bon&Local</h5>
+        {% endblock %}
+    </div>
+
+    <style>
+        <!-- STYLE DE BASE -->
+        body{
+            position: relative;
+            background-color: antiquewhite;
+        }
+        html
+        {
+            background-color: antiquewhite;
+            font-family: "Avenir Next";
+        }
+        .header
+        {
+            background-color: #333;
+        }
+        .logo
+        {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 125px;
+            height: 100px;
+        }
+        .produit
+        {
+            display: flex;
+            flex-direction: row;
+            margin-top: 100px;
+            position: absolute;
+        }
+        .consultation_produit
+        {
+            max-width: 100%;
+            margin-left: 50px;
+        }
+        .desc
+        {
+            padding-right: 50px;
+            padding-left: 50px;
+            padding-bottom: 150px;
+            margin-left: 25px;
+        }
+
+        .navigation_bar2
+        {
+            margin-bottom: -45px;
+            transition: 0.3s;
+        }
+        .navigation_bar1
+        {
+            float: right;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: -250px;
+            transition: 0.3s;
+        }
+        #nav2
+        {
+            color: white;
+            text-align: center;
+        }
+        #nav1
+        {
+            color: white;
+        }
+        .compte
+        {
+            width: 30px;
+            height: 30px;
+        }
+        .panier
+        {
+            width: 30px;
+            height: 30px;
+        }
+        .dropdown-menu
+        {
+            background-color: #333;
+        }
+        .dropdown-menu a:hover
+        {
+            background-color: black;
+        }
+        .navigation_bar1 a:hover
+        {
+            background-color: mediumpurple;
+        }
+        .navigation_bar2 a:hover
+        {
+            background-color: mediumpurple;
+            color: black;
+        }
+        .fruits
+        {
+            margin-bottom: auto;
+            margin-top: auto;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .search
+        {
+            width: 30px;
+            height: 25px;
+        }
+        .accueil
+        {
+            width: 40px;
+            height: 40px;
+        }
+        #accueil
+        {
+            padding: 15px;
+        }
+        .bio
+        {
+            margin-top: 0.5px;
+            margin-bottom: 0.5px;
+            width: 50px;
+            height: 50px;
+            margin-right: 5px;
+        }
+
+        #search
+        {
+            margin-top: 10px;
+        }
+
+        @media (min-width: 500px) and (max-width: 767.98px)
+        {
+            .navigation_bar1
+            {
+                transition: 0.3s;
+            }
+
+            .footer {
+                display: block;
+                width: 100%;
+                text-align: center;
+                position: fixed;
+            }
+
+            form{
+                width: 50%;
+            }
+            #search{
+                right: 0;
+            }
+
+            #nav1{
+                margin-top: -20px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (min-width: 768px)
+        {
+
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
